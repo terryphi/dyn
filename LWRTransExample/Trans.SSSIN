@@ -1,0 +1,75 @@
+set title "Time dependent simulation, zero reactivity insertion"
+set acelib "./xs/sss_jeff311u.xsdata"
+
+% --- Geometry is just a cube
+
+surf 2 cuboid -100.0 100.0 -100.0 100.0 -100.0 100.0
+
+% --- Cell definitions:
+
+cell  3  0  fuel  -2
+cell 99  0  outside   2     % Outside world
+
+% --- Fuel material is a homogenized LWR material:
+
+mat fuel   sum vol 8.0000E+06 moder lwtr 1001
+ 8016.03c  0.316667
+ 1001.03c  0.633333
+ 92235.03c 0.0015
+ 92238.03c 0.0485
+ 5010.03c  0.000115793 % 0$ reactivity insertion
+
+% --- Thermal scattering data for hydrogen in light water (294 K)
+
+therm lwtr lwj3.00t
+
+% --- Reflective boundary condition:
+
+set bc 2 2 2
+
+% --- Set up time structures for simulation and detectors:
+
+% --- 30 time bins for detector
+
+tme dettime 2 30 0 3e-3
+
+% --- 1 time interval for simulation (no population control)
+
+tme simutime 2 1 0 3e-3
+
+% --- Increase the size of neutron buffer since there is no pop. control
+
+set nbuf 40
+
+% --- Neutron population:
+
+% --- 60M neutrons in 6k batches (1k neutrons per batch)
+
+set nps 16000 60 simutime
+
+% --- Link source (use point-wise precursor tracking)
+
+set dynsrc "./source" 1
+
+% --- Set up detectors:
+
+% --- Tally neutron population as a function of time
+
+det 1 dr -15 void di dettime
+
+% --- Tally fission energy deposition as a function of time
+
+det 2 dr -8 void di dettime
+
+% --- Save neutron and precursor source to "./source_end"-files
+
+set savesrc "./source_end"
+
+% --- Do not generate group constants
+
+set gcu -1
+set pbuf 20
+
+% --- Do not use implicit capture, nxn, or fission
+
+set impl 0 0 0

@@ -1,0 +1,48 @@
+set title "Creating source for a time dependent simulation"
+set acelib "./xs/sss_jeff311u.xsdata"
+% --- Geometry is just a cube
+
+surf 2 cuboid -100.0 100.0 -100.0 100.0 -100.0 100.0
+
+% --- Cell definitions:
+
+cell  3  0  fuel     -2
+cell 99  0  outside   2     % Outside world
+
+% --- Fuel material is a homogenized LWR material:
+
+mat fuel   sum vol 8.0000E+06 moder lwtr 1001
+ 8016.03c  0.316667
+ 1001.03c  0.633333
+ 92235.03c 0.0015
+ 92238.03c 0.0485
+ 5010.03c  0.000115793
+
+% --- Thermal scattering data for hydrogen in light water (294 K)
+
+therm lwtr lwj3.00t
+
+% --- Reflective boundary condition:
+
+set bc 2 2 2
+
+% --- Set power level
+
+set power 1.0
+
+% --- Neutron population:
+
+% --- Large population size: (produced approx. 60M neutron and 40M precursor source points)
+set pop 18000 40 2
+
+% --- Save neutron and precursor source to "./source"-files
+
+set savesrc "./source"
+
+% --- Do not generate group constants
+
+set gcu -1
+
+% --- Do not use implicit capture, nxn, or fission
+
+set impl 0 0 0

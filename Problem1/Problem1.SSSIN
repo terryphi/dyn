@@ -1,0 +1,24 @@
+surf 1  cylz 0.0 0.0 10.0  % Pressure tube inner wall
+surf 2  cube 0.0 0.0 0.0 90.0  % Pressure tube inner wall
+
+cell 1 0  fuel  -1      % Pin lattice
+cell 2 0 mod -2 1
+cell 99 0 outside 2
+
+mat fuel    -12.4375010
+ 8016.03c    -1.18473E+1
+92235.03c    -95.27118E-1
+92238.03c    -9.75256E+1
+
+mat mod  -2.226
+ 6000.03c    -1
+
+
+set acelib "./xs/sss_jeff311u.xsdata"
+
+set pop 200 50 20
+
+plot 1 500 500
+plot 2 500 500
+plot 3 500 500
+mesh 3 500 500
