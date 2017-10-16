@@ -8,7 +8,7 @@
  - No decay nuclides
  - 133 reaction channels
  - 50 special reactions
- - No transmutation reactions
+ - 18 transmutation reactions
  - No transmutation branch reactions
  - No decay reactions
  - No decay branch reactions
@@ -53,24 +53,24 @@
             P - nuclide has photon transport cross section data
             T - nuclide has supplementary transmutation cross section data
 
-    1   0  6000.03c      03c  TRA    6   0 0   12.00110   300.0          N/A  I-----T-------------  natural carbon (C-nat)
-    2   0  8016.03c      03c  TRA    8  16 0   15.99492   300.0          N/A  I-----T-------------  oxygen 16 (O-16)
-    3   0  92235.03c     03c  TRA   92 235 0  235.04415   300.0          N/A  I-----T--F-D--------  uranium 235 (U-235)
-    4   0  92238.03c     03c  TRA   92 238 0  238.05078   300.0          N/A  I-----T--F-D--------  uranium 238 (U-238)
+    1   0  6000.03c      03c  TRA    6   0 0   12.00110   400.2          N/A  I-----T------T------  natural carbon (C-nat)
+    2   0  8016.03c      03c  TRA    8  16 0   15.99492   300.3          N/A  I-----T------T------  oxygen 16 (O-16)
+    3   0  92235.03c     03c  TRA   92 235 0  235.04415   300.3          N/A  I-----T--F-D-T------  uranium 235 (U-235)
+    4   0  92238.03c     03c  TRA   92 238 0  238.05078   300.3          N/A  I-----T--F-D-T------  uranium 238 (U-238)
 
  --- Table  2: Reaction and decay data: 
 
  Nuclide    1 / 4 : 6000.03c -- natural carbon (C-nat)
 
- Pointers                     : 18016647 4863
+ Pointers                     : 59982039 5112545
  Primary type                 : Transport
  Nuclide ZAI                  : 60000
  Library ID                   : 03c
  Cross section data file      : ./xs/acedata/6000JEF311.ace
  Atomic weight (AW)           : 12.00110
  Atomic weight ratio (AWR)    : 11.89800
- Temperature                  : 300.0 Kelvin
- XS temperature               : 300.0 Kelvin
+ Temperature                  : 400.2 Kelvin
+ XS temperature               : 400.2 Kelvin
  Minimum and maximum energy   : 1.00000E-11 1.50000E+02
  Half-life                    : N/A
  Specific ingestion toxicity  : N/A
@@ -85,7 +85,7 @@
  - Nuclide is not a delayed neutron precursor
  - Nuclide has no delayed neutron data
  - Nuclide has no ures ptable data
- - Nuclide temperature is not adjusted with TMS
+ - Nuclide temperature is adjusted with TMS between 400.2 and 499.9 Kelvin
  - Nuclide has no dosimetry data
  - Nuclide has no decay data
  - Nuclide has no supplementary transmutation cross section data
@@ -132,15 +132,15 @@
 
  Nuclide    2 / 4 : 8016.03c -- oxygen 16 (O-16)
 
- Pointers                     : 18004879 5967
+ Pointers                     : 59970280 2656237
  Primary type                 : Transport
  Nuclide ZAI                  : 80160
  Library ID                   : 03c
  Cross section data file      : ./xs/acedata/8016JEF311.ace
  Atomic weight (AW)           : 15.99492
  Atomic weight ratio (AWR)    : 15.85751
- Temperature                  : 300.0 Kelvin
- XS temperature               : 300.0 Kelvin
+ Temperature                  : 300.3 Kelvin
+ XS temperature               : 300.3 Kelvin
  Minimum and maximum energy   : 1.00000E-11 1.50000E+02
  Half-life                    : N/A
  Specific ingestion toxicity  : N/A
@@ -155,7 +155,7 @@
  - Nuclide is not a delayed neutron precursor
  - Nuclide has no delayed neutron data
  - Nuclide has no ures ptable data
- - Nuclide temperature is not adjusted with TMS
+ - Nuclide temperature is adjusted with TMS between 300.3 and 400.0 Kelvin
  - Nuclide has no dosimetry data
  - Nuclide has no decay data
  - Nuclide has no supplementary transmutation cross section data
@@ -164,11 +164,12 @@
 
  - 25 reaction channels
  - 44 special reactions
- - No transmutation reactions
+ - 10 transmutation reactions
  - No transmutation branch reactions
  - No decay reactions
  - No decay branch reactions
  - No transmutation paths
+ - All reaction paths linked to target
 
  25 reactions channel:
 
@@ -247,15 +248,15 @@
 
  Nuclide    3 / 4 : 92235.03c -- uranium 235 (U-235)
 
- Pointers                     : 18009957 106431
+ Pointers                     : 59975355 3058644
  Primary type                 : Transport
  Nuclide ZAI                  : 922350
  Library ID                   : 03c
  Cross section data file      : ./xs/acedata/92235JEF311.ace
  Atomic weight (AW)           : 235.04415
  Atomic weight ratio (AWR)    : 233.02500
- Temperature                  : 300.0 Kelvin
- XS temperature               : 300.0 Kelvin
+ Temperature                  : 300.3 Kelvin
+ XS temperature               : 300.3 Kelvin
  Minimum and maximum energy   : 1.00000E-11 2.00000E+01
  Half-life                    : N/A
  Specific ingestion toxicity  : N/A
@@ -271,7 +272,7 @@
  - Nuclide is not a delayed neutron precursor
  - Nuclide has delayed neutron data in 8 precursor groups
  - Nuclide has ures ptable data but it is not used
- - Nuclide temperature is not adjusted with TMS
+ - Nuclide temperature is adjusted with TMS between 300.3 and 400.0 Kelvin
  - Nuclide has no dosimetry data
  - Nuclide has no decay data
  - Nuclide has no supplementary transmutation cross section data
@@ -280,11 +281,12 @@
 
  - 41 reaction channels
  - 1 special reactions
- - No transmutation reactions
+ - 4 transmutation reactions
  - No transmutation branch reactions
  - No decay reactions
  - No decay branch reactions
  - No transmutation paths
+ - All reaction paths linked to target
 
  41 reactions channel:
 
@@ -336,15 +338,15 @@
 
  Nuclide    4 / 4 : 92238.03c -- uranium 238 (U-238)
 
- Pointers                     : 18013086 107259
+ Pointers                     : 59978481 3436791
  Primary type                 : Transport
  Nuclide ZAI                  : 922380
  Library ID                   : 03c
  Cross section data file      : ./xs/acedata/92238JF311.ace
  Atomic weight (AW)           : 238.05078
  Atomic weight ratio (AWR)    : 236.00580
- Temperature                  : 300.0 Kelvin
- XS temperature               : 300.0 Kelvin
+ Temperature                  : 300.3 Kelvin
+ XS temperature               : 300.3 Kelvin
  Minimum and maximum energy   : 1.00000E-11 3.00000E+01
  Half-life                    : N/A
  Specific ingestion toxicity  : N/A
@@ -360,7 +362,7 @@
  - Nuclide is not a delayed neutron precursor
  - Nuclide has delayed neutron data in 8 precursor groups
  - Nuclide has ures ptable data but it is not used
- - Nuclide temperature is not adjusted with TMS
+ - Nuclide temperature is adjusted with TMS between 300.3 and 400.0 Kelvin
  - Nuclide has no dosimetry data
  - Nuclide has no decay data
  - Nuclide has no supplementary transmutation cross section data
@@ -369,11 +371,12 @@
 
  - 47 reaction channels
  - 1 special reactions
- - No transmutation reactions
+ - 4 transmutation reactions
  - No transmutation branch reactions
  - No decay reactions
  - No decay branch reactions
  - No transmutation paths
+ - All reaction paths linked to target
 
  47 reactions channel:
 
@@ -438,46 +441,44 @@ Material "fuel":
 
  - Material is included in majorant
  - Material is included in geometry
- - Atom density 7.5019E-02 1/barn*cm
- - Mass density 1.2438E+01 g/cm3
+ - Atom density 1.2000E+05 1/barn*cm
+ - Mass density 1.9895E+07 g/cm3
  - Volume 0.0000E+00 cm3
  - Mass 0.0000E+00 g
  - Photon emission rate 0.0000E+00 1/s
- - Neutron emission rate 0.0000E+00 1/s
  - 3 nuclides in composition
  - No nuclides associated with S(a,b) data
- - 5.26 Mb of memory allocated for data
+ - 778.99 kb of memory allocated for data
 
 Isotopic composition (non-zero densities):
 
 -------------------------------------------------------------------
  Nuclide    a. weight   temp      a. dens      a. frac      m. frac
 -------------------------------------------------------------------
-  8016.03c   15.99492  300.0  4.66587E-02  6.21955E-01  9.96409E-02    
- 92235.03c  235.04415  300.0  2.55333E-03  3.40356E-02  8.01271E-02    
- 92238.03c  238.05078  300.0  2.58074E-02  3.44010E-01  8.20232E-01    
-       sum                    7.50194E-02  1.00000E+00  1.00000E+00
+  8016.03c   15.99492  300.3  7.46346E+04  6.21955E-01  9.96409E-02    
+ 92235.03c  235.04415  300.3  4.08427E+03  3.40356E-02  8.01271E-02    
+ 92238.03c  238.05078  300.3  4.12811E+04  3.44010E-01  8.20232E-01    
+       sum                    1.20000E+05  1.00000E+00  1.00000E+00
 -------------------------------------------------------------------
 
 Material "mod":
 
  - Material is included in majorant
  - Material is included in geometry
- - Atom density 1.1170E-01 1/barn*cm
- - Mass density 2.2260E+00 g/cm3
+ - Atom density 2.2260E+03 1/barn*cm
+ - Mass density 4.4361E+04 g/cm3
  - Volume 0.0000E+00 cm3
  - Mass 0.0000E+00 g
  - Photon emission rate 0.0000E+00 1/s
- - Neutron emission rate 0.0000E+00 1/s
  - 1 nuclides in composition
  - No nuclides associated with S(a,b) data
- - 2.26 Mb of memory allocated for data
+ - 773.94 kb of memory allocated for data
 
 Isotopic composition (non-zero densities):
 
 -------------------------------------------------------------------
  Nuclide    a. weight   temp      a. dens      a. frac      m. frac
 -------------------------------------------------------------------
-  6000.03c   12.00110  300.0  1.11699E-01  1.00000E+00  1.00000E+00    
-       sum                    1.11699E-01  1.00000E+00  1.00000E+00
+  6000.03c   12.00110  400.2  2.22600E+03  1.00000E+00  1.00000E+00    
+       sum                    2.22600E+03  1.00000E+00  1.00000E+00
 -------------------------------------------------------------------

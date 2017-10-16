@@ -22,7 +22,8 @@ mat mod  -2.226
  6000.03c    -1
 
 % --- will need to fix this
-ifc "./ifc1"
+ifc "../../Documents/dyn/Problem3/ifc1"
+ifc "../../Documents/dyn/Problem3/ifc2"
 
 set power 1.0
 
